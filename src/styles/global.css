@@ -6,7 +6,7 @@
 	:root,
 	:root[data-theme="light"] {
 		color-scheme: light;
-		/* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
+		/* https://tailwindcss.com/docs/customizing-colors#using-css-variables    */
 		--theme-bg: 0deg 0% 98%;
 		--theme-link: 172deg 18% 41%;
 		--theme-text: 203deg 11% 15%;
@@ -24,4 +24,28 @@
 		--theme-accent-2: 0deg 0% 93%;
 		--theme-quote: 102deg 100% 86%;
 	}
+
+	html {
+		@apply scroll-smooth;
+	}
+
+	html body {
+		@apply mx-auto flex min-h-screen max-w-4xl flex-col bg-bgColor px-8 pt-16 font-mono text-base font-normal text-textColor antialiased;
+	}
+
+	@media (min-width: 768px) {
+        html body {
+            @apply max-w-5xl;
+			@apply text-base;
+        }
+    }
+
+    /* Media query for even larger screens */
+    @media (min-width: 1024px) {
+        html body {
+            @apply max-w-6xl;
+			@apply text-xl;
+        }
+    }
+
 }
