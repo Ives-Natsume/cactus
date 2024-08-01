@@ -1,7 +1,7 @@
 ---
 title: "基于国际互联网的英语水平提升方式"
-publishDate: "1 July 2024"
-updatedDate: "1 July 2024"
+publishDate: "2 August 2024"
+updatedDate: "2 August 2024"
 description: "给电池的关于基于国际互联网的英语水平提升方式的报告"
 tags: ["电池"]
 
@@ -42,15 +42,14 @@ Clash for Android是一款开源发布在GitHub上的第三方软件，在界内
 以下是如何使用Clash：
 
 - 进入首页，点击`Profile`，再点击右上角的`+`新建配置
+  ![choose profile](./choose-profile.jpg)
+  ![add profile](./add-profile.jpg)
 - 选择`URL`
 - 编辑名字，在`URL`栏粘贴订阅链接，点击保存
+  ![edit profile](./edit-profile.jpg)
 - 按照软件提示完成后续操作
 - 点击`Tap to Start`，开始科学上网
-
-![choose profile](./choose-profile.jpg)
-![add profile](./add-profile.jpg)
-![edit profile](./edit-profile.jpg)
-![start using](./start-using.jpg)
+  ![start using](./start-using.jpg)
 
 需要注意的是，订阅链接是类似密码一样重要的存在，这是你对服务商的服务凭证，因此不可分享给他人。
 
