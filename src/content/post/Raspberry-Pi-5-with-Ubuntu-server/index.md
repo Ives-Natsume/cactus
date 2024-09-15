@@ -5,7 +5,7 @@ updatedDate: "14 September 2024"
 description: "A brief introduction about how to install Ubuntu Server 0n Raspberry Pi 5, set up envs, and deploy servers."
 tags: ["blog", "Ubuntu"]
 coverImage:
-    src: "./kumiko.jpg"
+    src: "./kumiko.png"
     alt: "kumiko"
 ---
 Recently I bought a Raspberry Pi 5 with 8GB RAM. It is convinced that the processor of Pi 5 is much powerfull than its elder brothers. Thus it would be a fancy choice for buiding a lite personal server.
@@ -96,7 +96,6 @@ Run the command to get Miniforge3 from GitHub:
 
 ```{Bash}
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh
-
 ```
 
 2. **Install Miniforge3**
@@ -104,8 +103,8 @@ wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge
 Give permissions to the script and run for installation.
 
 ```{Bash}
-chmod +x Miniforge3-Linux-aarch64.sh
-./Miniforge3-Linux-aarch64.sh
+$ chmod +x Miniforge3-Linux-aarch64.sh
+$ ./Miniforge3-Linux-aarch64.sh
 ```
 
 Follow the guidance to finish installation.
@@ -122,6 +121,34 @@ Now conda env should be successfully installed and activated on your machine.
 
 ## Tool: Gopeed hi-speed downloader
 
-https://github.com/GopeedLab/gopeed/releases/download/v1.5.9/gopeed-web-v1.5.9-linux-arm64.zip
+[Gopeed](https://github.com/GopeedLab/gopeed) is a high speed downloader which supports Magnet, https and many other download protocol.
 
-Gopeed is a high speed downloader
+For Raspberry Pi, we would need a [arm46 version](https://github.com/GopeedLab/gopeed/releases/download/v1.5.9/gopeed-web-v1.5.9-linux-arm64.zip, "Github release, click to download.").
+
+To install the software, run:
+
+```{bash}
+$ # Download software
+$ wget https://github.com/GopeedLab/gopeed/releases/download/v1.5.9/gopeed-web-v1.5.9-linux-arm64.zip
+
+
+$ # Unzip
+$ unzip gopeed-web-v1.5.9-linux-arm64.zip
+
+
+$ cd gopeed-web-v1.5.9-linux-arm64
+$ chmod +x gopeed
+$ ./gopeed
+```
+
+Then you would be able to visit Gopeed on http://localhost:9999
+
+You can also add path to environment to run gopeed everywhere:
+
+```{bash}
+nano ~/.bashrc
+```
+
+ > Attention that `nano ~/.bashrc`only changes your user environment.
+
+Then append `export PATH="/path/to/directory/gopeed:$PATH"` to the end. Finally run `source ~/.bashrc` again to make changes take effect immediately.
