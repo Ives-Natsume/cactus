@@ -20,7 +20,7 @@ Here we're sharing how to set up our Ubuntu server to make it a cozy palce for o
 
 Once ssh connected, run
 
-```Bash
+```bash
 $ sudo nano /etc/netplan/01-<file-name>.yaml
 ```
 
@@ -40,7 +40,7 @@ $ sudo fdisk -l
 
 Now suppose that you have a hardware named `nvme0n1`, use the `fdisk` tool to partition the `nvme0n1` hard drive:
 
-```Bash
+```bash
 $ sudo fdisk /dev/nvme0n1
 ```
 
@@ -162,7 +162,7 @@ Since Raspberry Pi uses ARM chips, `Miniforge3` performs better on them than con
 
 Run the command to get Miniforge3 from GitHub:
 
-```Bash
+```bash
 $ wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh
 ```
 
@@ -170,7 +170,7 @@ $ wget https://github.com/conda-forge/miniforge/releases/latest/download/Minifor
 
 Give permissions to the script and run for installation.
 
-```Bash
+```bash
 $ chmod +x Miniforge3-Linux-aarch64.sh
 $ ./Miniforge3-Linux-aarch64.sh
 ```
