@@ -193,7 +193,7 @@ Here we would share some useful tools and how to deploy them on your pi.
 
 ### Gopeed: A high-speed downloader
 
-[Gopeed](https://github.com/GopeedLab/gopeed) is a high speed downloader which supports Magnet, https and many other download protocol.
+[Gopeed](https://github.com/GopeedLab/gopeed, "https://github.com/GopeedLab/gopeed") is a high speed downloader which supports Magnet, https and many other download protocol.
 
 For Raspberry Pi, we would need a [arm46 version](https://github.com/GopeedLab/gopeed/releases/download/v1.5.9/gopeed-web-v1.5.9-linux-arm64.zip, "Github release, click to download.").
 
