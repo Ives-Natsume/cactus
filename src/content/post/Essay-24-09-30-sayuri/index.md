@@ -1,5 +1,5 @@
 ---
-title: "杂谈 2024 09 30 烈士纪念日 / 酸欠少女"
+title: "[杂谈2024-09-30] 烈士纪念日 / 酸欠少女"
 publishDate: "30 September 2024"
 updatedDate: "30 September 2024"
 description: "杂谈：烈士纪念日 / 酸欠少女"
