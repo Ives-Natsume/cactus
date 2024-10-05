@@ -2,7 +2,7 @@
 title: "[备忘录]集腋成裘，记录一些零碎的信息"
 publishDate: "5 October 2024"
 updatedDate: "5 October 2024"
-description: "备忘录"
+description: "备忘录，记录开发（整活）中遇到的零碎信息"
 tags: ["备忘录"]
 coverImage:
     src: "./cover.png"
