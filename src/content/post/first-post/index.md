@@ -3,7 +3,7 @@ title: "My First Post!"
 publishDate: "27 June 2024"
 updatedDate: "27 June 2024"
 description: "My very first post on Astro Cactus"
-tags: ["test", "blog", "image"]
+tags: ["image"]
 coverImage:
     src: "./cover.jpg"
     alt: "高坂麗奈"
