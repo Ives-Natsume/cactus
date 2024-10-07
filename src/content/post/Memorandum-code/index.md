@@ -62,6 +62,8 @@ bool isPrimenumber(int x) {
 
 ### 冒泡排序
 
+每次遍历时，最后一个数一定是该次遍历最大的数，因此下次遍历时即可略过。
+
 ```c++ title = "bubble sort"
 void bubbleSort(vector<int>& v) {
     for (int i = 0; i <= v.size() - 2; i++) {
