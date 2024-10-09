@@ -46,10 +46,17 @@ $ sudo fdisk -l
 $ sudo fdisk /dev/nvme0n1
 ```
 
->- 按`n`新建分区
->- 无特殊要求，选择`primary`
->- 再次按`n`可多次新建分区
->- 按`w` 退出`fdisk`
+:::note
+
+按`n`新建分区
+
+无特殊要求，选择`primary`
+
+再次按`n`可多次新建分区
+
+按`w` 退出`fdisk`
+
+:::
   
 1. **格式化分区**
 

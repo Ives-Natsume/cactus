@@ -1,15 +1,20 @@
+import fs from "node:fs";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
-import fs from "fs";
-import rehypeExternalLinks from "rehype-external-links";
-import remarkUnwrapImages from "remark-unwrap-images";
-
+import { defineConfig } from "astro/config";
 import { expressiveCodeOptions } from "./src/site.config";
-import { remarkReadingTime } from "./src/utils/remark-reading-time";
+
+// Remark plugins
+import remarkDirective from "remark-directive"; /* Handle ::: directives as nodes */
+import remarkUnwrapImages from "remark-unwrap-images";
+import { remarkAdmonitions } from "./src/plugins/remark-admonitions"; /* Add admonitions */
+import { remarkReadingTime } from "./src/plugins/remark-reading-time";
+
+// Rehype plugins
+import rehypeExternalLinks from "rehype-external-links";
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,12 +36,12 @@ export default defineConfig({
 			[
 				rehypeExternalLinks,
 				{
-					rel: ["nofollow, noopener, noreferrer"],
+					rel: ["nofollow, noreferrer"],
 					target: "_blank",
 				},
 			],
 		],
-		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
+		remarkPlugins: [remarkUnwrapImages, remarkReadingTime, remarkDirective, remarkAdmonitions],
 		remarkRehype: {
 			footnoteLabelProperties: {
 				className: [""],
@@ -46,7 +51,7 @@ export default defineConfig({
 	// https://docs.astro.build/en/guides/prefetch/
 	prefetch: true,
 	// ! Please remember to replace the following site property with your own domain
-	site: "https://metasequoiani.com",
+	site: "https://astro-cactus.chriswilliams.dev/",
 	vite: {
 		optimizeDeps: {
 			exclude: ["@resvg/resvg-js"],
@@ -60,9 +65,7 @@ function rawFonts(ext: string[]) {
 		name: "vite-plugin-raw-fonts",
 		// @ts-expect-error:next-line
 		transform(_, id) {
-			// eslint-disable-next-line
 			if (ext.some((e) => id.endsWith(e))) {
-				// eslint-disable-next-line
 				const buffer = fs.readFileSync(id);
 				return {
 					code: `export default ${JSON.stringify(buffer)}`,
