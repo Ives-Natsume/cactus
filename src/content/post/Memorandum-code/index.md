@@ -58,6 +58,31 @@ bool isPrimenumber(int x) {
 }
 ```
 
+### 最大公约数（欧几里得算法）
+
+通过对两数辗转相除并取余，最后得到的最大公约数一定也是余数的因数。
+想象有A、B两个箱子，把A放进B，留下的空隙就是这一次的余数。
+再想象和空隙同体积的临时箱子C1，用C1填满A，最后留下空隙C2。
+依次类推，最后会留下一个“最小单位体积”的箱子Cn，也就是两数的最大公因数。
+特别的，当两数互质时，最大公因数是1。
+
+递归伪代码：
+
+```text "Greatest Common Divisor"
+gcd(a, b) = gcd(b, a % b)
+```
+
+```c++ title = "Greatest Common Divisor"
+int gcd(int a, int b) {
+    while (b != 0) {
+        int remainder = a % b;
+        a = b;
+        b = remainder;
+    }
+    return a;
+}
+```
+
 ## 简单算法
 
 ### 冒泡排序
