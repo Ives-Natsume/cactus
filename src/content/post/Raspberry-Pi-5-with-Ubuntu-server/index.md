@@ -26,7 +26,9 @@ Once ssh connected, run
 $ sudo nano /etc/netplan/01-<file-name>.yaml
 ```
 
- > `.yaml` 文件对缩进格式非常敏感，应小心编辑
+:::important
+`.yaml` 文件对缩进格式非常敏感，应小心编辑
+:::
 
 修改Netplan可以方便我们管理路由表。
 
@@ -47,7 +49,6 @@ $ sudo fdisk /dev/nvme0n1
 ```
 
 :::note
-
 按`n`新建分区
 
 无特殊要求，选择`primary`
@@ -55,7 +56,6 @@ $ sudo fdisk /dev/nvme0n1
 再次按`n`可多次新建分区
 
 按`w` 退出`fdisk`
-
 :::
   
 1. **格式化分区**
