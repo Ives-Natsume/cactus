@@ -97,7 +97,9 @@ sudo nano /etc/fstab
 $ sudo mount -a
 ```
 
- > 如果一切正常则无输出
+:::note
+如果一切正常则无输出
+:::
 
 ## 搭建开发环境
 
