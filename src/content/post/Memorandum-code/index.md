@@ -101,3 +101,73 @@ void bubbleSort(vector<int>& v) {
 };
 
 ```
+
+### 二维数组与滑动窗口
+
+以扫雷游戏为例
+
+```c++ title = "Two-dimensional Array with Slide Window"
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Directions array to check all 8 neighboring cells
+const int dx[] = {-1, -1, -1,  0, 0, 1, 1, 1};
+const int dy[] = {-1,  0,  1, -1, 1, -1, 0, 1};
+
+
+bool isValid(int x, int y, int n, int m) {
+    return (x >= 0 && x < n && y >= 0 && y < m);
+}
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    vector<vector<char>> minefield(n, vector<char>(m));
+
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            cin >> minefield[i][j];
+        }
+    }
+
+    // Create a new vector to store the result
+    // Attention that the vector is a copy of the origin one
+    vector<vector<char>> result = minefield;
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            if (minefield[i][j] == '?') {
+
+                int mine_count = 0;
+                for (int d = 0; d < 8; ++d) {
+                    int newX = i + dx[d];
+                    int newY = j + dy[d];
+                    if (isValid(newX, newY, n, m) && minefield[newX][newY] == '*') {
+                        mine_count++;
+                    }
+                }
+
+                // Convert the number to a character
+                // Since there would be always less than 8 mines,
+                // this part would add the ascii of '0' with mine_count and would be printed in char.
+                // The step converted the number to a char again, and just the correct add-up number.
+                result[i][j] = '0' + mine_count;
+            }
+        }
+    }
+
+    // Output the result
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            cout << result[i][j];
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+```
