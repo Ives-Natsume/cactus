@@ -49,7 +49,7 @@ void compareSize(int a, int b) {
 
 ``` c++ title = "isPrimenumber"
 bool isPrimenumber(int x) {
-    for (int i = 2; i <= sqrt(x); i++) {    // i <= sqrt(x)
+    for (int i = 2; i <= sqrt(x); i++) {
         if (x % i == 0) {
             return false;
         };
@@ -95,10 +95,10 @@ void bubbleSort(vector<int>& v) {
         for (int j = 0; j <= v.size() - 2 - i; j++) {
             if (v[j] > v[j + 1]) {
                 swap(v[j], v[j + 1]);
-            };
-        };
-    };
-};
+            }
+        }
+    }
+}
 
 ```
 
@@ -159,7 +159,7 @@ int main() {
         }
     }
 
-    // Output the result
+
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
             cout << result[i][j];

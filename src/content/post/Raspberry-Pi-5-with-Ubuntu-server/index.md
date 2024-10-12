@@ -57,7 +57,7 @@ $ sudo fdisk /dev/nvme0n1
 
 按`w` 退出`fdisk`
 :::
-  
+
 1. **格式化分区**
 
 假设新建分区为`/dev/nvme0n1p1`，通过`mkfs`命令格式化分区并设置文件系统。
@@ -224,4 +224,6 @@ $ chmod +x gopeed
 $ ./gopeed
 ```
 
-通过http://localhost:9999访问gopeed
+通过
+`http://localhost:9999`
+访问gopeed
