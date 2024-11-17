@@ -11,6 +11,50 @@ coverImage:
 
 ## 软件
 
+### pybind11的使用
+
+激活环境后，pip install pybind11
+
+在当前路径下新建cpp和py文件:
+
+```python title = "setup.py"
+from setuptools import setup, Extension
+import pybind11
+
+setup(
+    name="test",  # Name of the module
+    ext_modules=[
+        Extension(
+            "test",  # Must match the module name in PYBIND11_MODULE
+            ["test.cpp"],
+            include_dirs=[pybind11.get_include()],
+            language="c++",
+        )
+    ],
+)
+
+```
+
+```cpp title = "test.cpp"
+#include <pybind11/pybind11.h>
+
+namespace py = pybind11;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+// Define the module named "test"
+PYBIND11_MODULE(test, m) {
+    m.doc() = "Example module created with Pybind11";  // Optional docstring
+    // Add functions, classes, etc., here.
+    m.def("add", &add, "A function that adds two numbers");
+}
+
+```
+
+运行`python setup.py build_ext --inplace`完成构建，此时可以通过在`setup.py`中设置的模块名称调用c++程序：`import module_name`
+
 ### Spotify Premium的购买
 
 因为支付地区检测的原因，可能难以直接购买会员。
