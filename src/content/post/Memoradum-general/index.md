@@ -55,6 +55,23 @@ PYBIND11_MODULE(test, m) {
 
 运行`python setup.py build_ext --inplace`完成构建，此时可以通过在`setup.py`中设置的模块名称调用c++程序：`import module_name`
 
+
+### VWmare设置ssh
+
+直接运行虚拟机的表现实在惨不忍睹，不如ssh一下试试看？
+
+打开`虚拟网络设置`，选择`NAT`，`更改配置（管理员）`，选择添加规则，
+主机和虚拟机端口均为22，在ip中填写虚拟机ip（ifconfig得到），然后在宿主机运行
+
+```bash
+cat ~/.ssh/id_rsa.pub | ssh 虚拟机用户名@虚拟机IP "cat >> ~/.ssh/authorized_keys"
+```
+
+按提示操作后即可ssh
+
+参考文献：
+https://www.cnblogs.com/BinarySong/p/16244415.html
+
 ### Spotify Premium的购买
 
 因为支付地区检测的原因，可能难以直接购买会员。
