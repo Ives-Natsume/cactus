@@ -5,7 +5,7 @@ updatedDate: "18 January 2025"
 description: "PointNet/PointNet++"
 tags: ["备忘录","深度学习"]
 coverImage:
-    src: "./kumiko-sense.png"
+    src: "./kumiko-sense.jpg"
     alt: "KumikoSense"
 draft: true
 ---
