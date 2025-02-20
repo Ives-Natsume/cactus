@@ -5,7 +5,7 @@ updatedDate: "20 February 2025"
 description: "杂谈：Mutsumi与Mortis"
 tags: ["杂谈"]
 coverImage:
-    src: "./cover.jpg"
+    src: "./cover.png"
     alt: "Mutsumi"
 ---
 
