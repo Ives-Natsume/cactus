@@ -1,5 +1,5 @@
 ---
-title: "[日记 rust-lio 2025-12-29]"
+title: "[日记 rust-lio 2026-01-21]"
 publishDate: "21 January 2026"
 updatedDate: "21 January 2026"
 description: "开发日记 rust-lio 2026-01-21"
